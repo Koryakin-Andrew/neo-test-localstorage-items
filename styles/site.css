@@ -1,0 +1,78 @@
+.mainContentBlock {
+	max-width: 500px;
+	margin: 0 auto;
+	height: 100vh;
+	max-height: 100vh;
+	display: flex;
+	flex-direction: column;
+ }
+ .mainContentBlock .upContentBlock {
+	max-height: 50%;
+	width: 100%;
+ }
+ .mainContentBlock .upContentBlock form[name='addItemForm'] {
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	max-height: 100%;
+	vertical-align: top;
+	padding: 10px;
+ }
+ .mainContentBlock .upContentBlock form[name='addItemForm'] label {
+	display: block;
+	width: 100%;
+	padding: 0px;
+	margin: 5px 0px;
+ }
+ .mainContentBlock .upContentBlock form[name='addItemForm'] input,
+ .mainContentBlock .upContentBlock form[name='addItemForm'] textarea {
+	display: block;
+	width: 100%;
+	padding: 0px;
+	margin: 0px 0px 30px 0px;
+ }
+ .mainContentBlock .upContentBlock form[name='addItemForm'] button {
+	display: block;
+	width: 100%;
+	padding: 5px 0px;
+	margin: 0px;
+ }
+ .mainContentBlock .upContentBlock .itemDescriptionBlock {
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	max-height: 100%;
+	padding: 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	vertical-align: top;
+	word-wrap: break-word;
+ }
+ .mainContentBlock .itemsBlock {
+	flex: 1 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+ }
+ .mainContentBlock .itemsBlock .item {
+	border: 2px solid transparent;
+	border-left: none;
+	border-right: none;
+	background: none;
+	width: 100%;
+	height: 33px;
+	padding: 3px 10px;
+	text-align: left;
+	font-size: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+ }
+ .mainContentBlock .itemsBlock .itemClicked {
+	border-color: black;
+	background-color: #c1c1c1;
+ }
+ .mainContentBlock footer {
+	height: 50px;
+	background-color: black;
+	color: white;
+ }
+ 

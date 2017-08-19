@@ -1,0 +1,9 @@
+<form name="addItemForm" data-ng-submit="addItemClick({name:item,nameModelController:addItemForm.itemName,valueModelController:addItemForm.valueItem})" novalidate>
+      <label>Имя</label>
+      <input type="text" data-ng-model="item.name" name="itemName"  data-ng-required="true"
+      ng-disabled="isDisabled"/>
+      <label>Описание</label>
+      <textarea data-ng-model="item.description" name="valueItem"  data-ng-required="true"
+      ng-disabled="isDisabled" ></textarea>
+      <button type="submit" ng-disabled="isDisabled"> + добавить</button>
+</form>

@@ -1,0 +1,79 @@
+.mainContentBlock{
+   .upblock-item(){
+      width:50%;
+      height: 100%;
+      display:inline-block;
+      max-height: 100%;
+      vertical-align:top;
+      padding:10px;
+   }
+   .overflow-bloch-visible(){
+      overflow-y: auto;
+      overflow-x: hidden;
+   }
+
+	max-width: 500px;
+	margin: 0 auto;
+	height: 100vh;
+	max-height: 100vh;
+	display: flex; 
+   flex-direction: column; 
+
+   .upContentBlock{
+      max-height: 50%;
+      width: 100%;
+
+      form[name='addItemForm']{
+         .form-item(@padding;@margin){
+            display:block;
+            width:100%;
+            padding: @padding;
+            margin:@margin;
+         }
+
+         .upblock-item;
+
+         label{
+            .form-item(0px,5px 0px);
+         }
+         input,textarea{
+            .form-item(0px,0px 0px 30px 0px);
+         }
+         button{
+            .form-item(5px 0px,0px);
+         }
+      }
+      .itemDescriptionBlock{
+         .upblock-item;
+         .overflow-bloch-visible;
+         vertical-align:top;
+         word-wrap: break-word;
+      }
+   }
+   .itemsBlock{
+      flex: 1 0; 
+      .overflow-bloch-visible;
+      .item{
+         border:2px solid transparent;
+         border-left: none;
+         border-right: none;
+         background: none;
+         width:100%;
+         height:33px;
+         padding: 3px 10px;
+         text-align:left;
+         font-size: 20px;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+      .itemClicked{
+         border-color:black;
+         background-color: rgb(193, 193,193);
+      }
+   }
+   footer{
+      height: 50px;
+      background-color:black;
+      color: white;
+   }
+}

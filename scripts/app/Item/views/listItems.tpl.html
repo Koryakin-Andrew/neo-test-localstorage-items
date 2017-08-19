@@ -1,0 +1,7 @@
+<section class="itemsBlock">
+      <div class="item" ng-repeat="item in items track by $index" 
+            data-ng-class="{itemClicked:IsSelected(item)}"
+            data-ng-click="selectItem(item)">
+            {{item.name}}
+      </div>
+</section>

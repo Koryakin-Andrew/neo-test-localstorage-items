@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index</title>
+<link href="styles/reset.css" rel="stylesheet"/>
+<link href="styles/siteless.less" rel="stylesheet/less" type="text/css" />
+
+<!--<link href="styles/site.css" rel="stylesheet"/>-->
+<script>
+    less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    rootpath: ":/a.com/"
+    };
+ </script>
+<script src="scripts/less.js" type="text/javascript"></script>
+<script src="scripts/angular.js"></script>
+</head>
+<body ng-app="Item">
+    <page-item></page-item>
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/Item/itemsloadService.js"></script>
+    <script src="scripts/app/Item/addItem.js"></script>
+    <script src="scripts/app/Item/pageItem.js"></script>
+    <script src="scripts/app/Item/itemDescription.js"></script>
+    <script src="scripts/app/Item/listItems.js"></script>
+</body>
+</html>
