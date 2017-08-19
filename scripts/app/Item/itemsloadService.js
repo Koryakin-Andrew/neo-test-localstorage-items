@@ -13,9 +13,14 @@ angular.module("Item").provider('itemsLoadService',function(){
                   var saveDeffer=$q.defer();
                   return{
                         loadPromise: loadDeffer.promise,
-                        loadedSuccess:function(lStorage){
-                              loadDeffer.resolve(lStorage);
-                              
+                        loadedSuccess:function(){
+                              if(localStorage!=null && localStorage.ItemsStorage!=null)
+                              {
+                                    loadDeffer.resolve(JSON.parse(localStorage.getItem("ItemsStorage")));
+                              }
+                              else{
+                                    loadDeffer.resolve([]);
+                              }
                         },
                         loadedFail:function(error){
                               loadDeffer.reject(error);
@@ -25,11 +30,11 @@ angular.module("Item").provider('itemsLoadService',function(){
                               saveDeffer=$q.defer()
                               return saveDeffer.promise;
                         },
-                        saveSuccess:function(data,allData,lStorage){
-                              if(data!=null && lStorage!=null){
+                        saveSuccess:function(data,allData){
+                              if(data!=null && localStorage!=null){
                                     try{
                                           allData[allData.length]=data;
-                                          lStorage.setItem("ItemsStorage",JSON.stringify(allData));
+                                          localStorage.setItem("ItemsStorage",JSON.stringify(allData));
                                           saveDeffer.resolve(data);
                                     }
                                     catch(error){

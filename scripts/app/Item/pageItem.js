@@ -23,17 +23,11 @@ app.directive("pageItem",['itemsLoadService',function(itemsLoadService){
             //
             //загрузка данных
             //
-            itemsLoadService.loadPromise.then(function(lStorage){
-                  if (lStorage!=null && lStorage.ItemsStorage!=null){
-                        $scope.AllItems=JSON.parse(lStorage.getItem("ItemsStorage"));
-                  }
-                  else{
-                        $scope.AllItems=[];
-                  }
-                  
+            itemsLoadService.loadPromise.then(function(data){
+                  $scope.AllItems=data;
             },function(error){ });
-            // инициализация загружки новых данных
-            itemsLoadService.loadedSuccess(localStorage);
+            // инициализация загрузки новых данных
+            itemsLoadService.loadedSuccess();
             //
             //
             // Установка выбраного элемента
@@ -73,7 +67,7 @@ app.directive("pageItem",['itemsLoadService',function(itemsLoadService){
                         itemsLoadService.saveSuccess({
                               name:$scope.newItem.name,
                               description:$scope.newItem.description
-                        },copyAllData,localStorage);
+                        },copyAllData);
                   }
                   else{
                         alert("Оба поля обязательны к заполнению");
