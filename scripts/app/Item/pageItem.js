@@ -62,12 +62,10 @@ app.directive("pageItem",['itemsLoadService',function(itemsLoadService){
                               $scope.IsItemLoading=false;
                         });
                         // инициализация сохранение новых данных
-                        // cloneItems - временное хранилище копии всех значений
-                        var copyAllData=angular.copy($scope.AllItems);
                         itemsLoadService.saveSuccess({
                               name:$scope.newItem.name,
                               description:$scope.newItem.description
-                        },copyAllData);
+                        });
                   }
                   else{
                         alert("Оба поля обязательны к заполнению");

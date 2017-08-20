@@ -30,9 +30,13 @@ angular.module("Item").provider('itemsLoadService',function(){
                               saveDeffer=$q.defer()
                               return saveDeffer.promise;
                         },
-                        saveSuccess:function(data,allData){
+                        saveSuccess:function(data){
                               if(data!=null && localStorage!=null){
                                     try{
+                                          allData=JSON.parse(localStorage.getItem("ItemsStorage"));
+                                          if(allData==null){
+                                                allData=[];
+                                          }
                                           allData[allData.length]=data;
                                           localStorage.setItem("ItemsStorage",JSON.stringify(allData));
                                           saveDeffer.resolve(data);
@@ -44,7 +48,6 @@ angular.module("Item").provider('itemsLoadService',function(){
                               else{
                                     saveDeffer.reject("локальное хранилище не доступно");
                               }
-                              
                         }
                   }
             }
